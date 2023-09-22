@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Store</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+    
+</head>
+<body onload="loadFunction()">
+    <include src="assets/nav.html"></include>
+  
+    <div class="p-5 m-0" id="intro">
+
+    </div>
+
+    <include src="assets/footer.html"></include>
+
+    <script>
+
+  //JS Codes for include nav and footer html files
+                    let includes = document.getElementsByTagName('include');
+                    
+                    for (var i = 0; i < includes.length; i++) {
+                    let include = includes[i];
+                    load_file(includes[i].attributes.src.value, function(text) 
+                    {
+                        include.insertAdjacentHTML('afterend', text);
+                        include.remove();
+                    });
+                    }
+                    function load_file(filename, callback) {
+                    fetch(filename).then(response => response.text()).then(text => callback(text));
+                    }
+
+        function loadFunction()
+        {
+            if(localStorage.getItem("log")=="true")
+            {
+            const nodeList= document.querySelectorAll(".disabled");
+            for(i=0;i<nodeList.length;i++)
+                nodeList[i].classList.remove("disabled");
+            
+            var x=`<h3>Dear ${localStorage.getItem("log-fname")}, You are logged on as ${localStorage.getItem("log-email")} Welcome... <button onclick='logout()' class="btn btn-danger">Log Out..</button></h3>`
+            } 
+            else
+            {
+            var x=`<h1>Please Login for Activate functions...</h1>`;     
+            }
+            intro.innerHTML=x;
+        }
+
+        function logout()
+        {
+            localStorage.setItem("log","false");
+                var href = window.location.href;
+                var dir = href.substring(0, href.lastIndexOf('/')) + "/";
+                window.location.href=dir+"index.html";
+
+        }
+    
+
+     </script>
+</body>
+</html>

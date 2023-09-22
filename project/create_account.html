@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/user.js"></script>
+</head>
+<body>
+
+    <include src="assets/nav.html"></include>
+  
+    <div class="container m-5">
+        
+        <div class="row justify-content-center">
+            <div class="col-md-6 bg-light rounded-5 p-5">
+                <h1 class="text-center text-warning py-4">Register New User</h1>
+                <form onsubmit="event.preventDefault();validateform()">
+                    <div class="form-group my-3">
+                        <input type="text" class="form-control" id="fname" placeholder="Enter First Name *">
+                    </div>
+
+                    <div class="form-group my-3">
+                    <input type="text" class="form-control" id="lname"  placeholder="Enter Last Name *">
+                    </div>
+
+                    <div class="form-group my-3">
+                    <input type="email" class="form-control" id="email"  placeholder="Enter email *" required>
+                    </div>
+                    
+                    <div class="form-group my-3">
+                      <input type="email" class="form-control" id="emailconfirm" placeholder="Confirm email">
+                    </div>
+                    <div class="form-group my-3">
+                      <input type="password" class="form-control" id="pass" placeholder="Password *" required>
+                    </div>
+                    <div class="form-group my-3">
+                        <input type="password" class="form-control" id="passconfirm" placeholder="Confirm Password">
+                    </div>
+                    <div class="form-group my-3">
+                        <input type="tel" class="form-control" id="tel" placeholder="Enter Telephone Numbere">
+                    </div>
+                    <div class="justify-content-center d-flex">
+                    <button onclick="adduser()" class="btn btn-primary my-3">Submit</button>
+                    </div>
+                    <p class="text-center">
+                    Have account ? <a href="login.html">Login</a>
+                    </p>
+                  
+                  </form>
+
+            </div>
+        </div>
+
+    
+    </div>
+
+
+    <include src="assets/footer.html"></include>
+  
+
+    <script>
+        //JS Codes for include nav and footer html files
+        let includes = document.getElementsByTagName('include');
+        for (var i = 0; i < includes.length; i++) {
+        let include = includes[i];
+        load_file(includes[i].attributes.src.value, function(text) {
+            include.insertAdjacentHTML('afterend', text);
+            include.remove();
+        });
+        }
+        function load_file(filename, callback) {
+        fetch(filename).then(response => response.text()).then(text => callback(text));
+        }
+
+        function validateform()
+        {
+        if (email.value != emailconfirm.value || pass.value != passconfirm.value )
+            {
+                alert("Email & Confirm Email, Password & Confirm Password should be same.");
+                return;
+            }
+        }
+     </script>
+
+</body>
+</html>
