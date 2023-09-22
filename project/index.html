@@ -15,9 +15,64 @@
 
     </div>
 
+    <div class="p-5 m-0" id="main">
+    <div class="row justify-content-around">
+        <div class="col-md-6 text-center">
+            <h1><span class="text-warning">Specials</span> of the week</h1>
+            <h4 class="py-4"> Always specials</h4>
+            <a href="special.html" class="btn btn-primary p-3">See Special</a>
+        </div>
+        <div class="col-md-4">
+            <marquee>
+            <img src="images/1.png" class="w-50 h-200 px-2">
+            <img src="images/2.png" class="w-50 h-200 px-2">
+            <img src="images/3.png" class="w-50 h-200 px-2">
+            <img src="images/4.png" class="w-50 h-200 px-2">
+            <img src="images/5.png" class="w-50 h-200 px-2">
+            </marquee>
+        </div>
+    </div>
+
+    <div class="row justify-content-around pt-5 mt-5">
+        <div class="col-md-3 text-center bg-light py-5">
+            <p><i class="bi bi-laptop"></i></p>
+            <h1>Your Account</h1>
+            <p>Log in to Your account</p>
+            <a href="#" class="btn btn-lg w-100 btn-primary">Connection</a>
+        </div>
+        <div class="col-md-3 text-center bg-light py-5">
+            <p><i class="bi bi-search"></i></p>
+            <h1>Seek</h1>
+            <p>Search our catalog</p>
+            <a href="search.html" class="btn btn-lg w-100 btn-primary">Research</a>
+        </div>
+        <div class="col-md-3 text-center bg-light py-5">
+            <p><i class="bi bi-person-rolodex"></i></p>
+            <h1>Contacts</h1>
+            <p>Who are we?</p>
+            <a href="contacts.html" class="btn btn-lg w-100 btn-primary">Contacts</a>
+        </div>
+    </div>
+
+    <div class="row justify-content-around pt-5 mt-5">
+        <div class="col-md-3 text-center py-5">
+            <img src="images/book.png" class="w-100">
+        </div>
+        <div class="col-md-6 text-center py-5">
+            <h1 class="py-4 text-warning">Access the Catalog</h1>
+            <p>Access the catalog to see our wonderful books</p>
+            <a href="catalog.html" class="btn btn-lg w-100 btn-primary">connect to Catalog</a>
+        </div>
+    </div>
+
+    </div>
+
     <include src="assets/footer.html"></include>
 
     <script>
+
+        //main.style.display="none";
+
 
   //JS Codes for include nav and footer html files
                     let includes = document.getElementsByTagName('include');
@@ -43,6 +98,7 @@
                 nodeList[i].classList.remove("disabled");
             
             var x=`<h3>Dear ${localStorage.getItem("log-fname")}, You are logged on as ${localStorage.getItem("log-email")} Welcome... <button onclick='logout()' class="btn btn-danger">Log Out..</button></h3>`
+            //main.style.display="block";
             } 
             else
             {
@@ -59,7 +115,6 @@
                 window.location.href=dir+"index.html";
 
         }
-    
 
      </script>
 </body>
