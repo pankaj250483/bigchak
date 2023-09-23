@@ -15,8 +15,7 @@
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <div class="input-group mb-3 w-100">
-                    <input type="text" class="form-control" placeholder=" Type here for search.." aria-label="Recipient's username" aria-describedby="button-addon2">
-                    <button class="btn btn-primary" type="button" id="button-addon2">Search</button>
+                    <input type="text" id="searchbox" class="form-control" placeholder=" Type here for search.." aria-label="Recipient's username" aria-describedby="button-addon2" onkeyup="searchbook()">
                   </div>
             </div>
         </div>
@@ -25,7 +24,7 @@
         <div class="row mx-5">
             <div class="col-md-4 my-4">
                 <a href="#">
-                <img class="w-75 h-400" src="images/1.png" alt="Title">
+                <img class="w-75 h-400" src="images/1.png" alt="A MILLION TO ONE">
                 </a>
                 <p class="mt-3"><b>Product Code:</b>123456789</br>
                  <b>Author:</b> Tony Faggioli</br>
@@ -35,7 +34,7 @@
             </div>
             <div class="col-md-4 my-4">
                 <a href="#">
-                <img class="w-75 h-400" src="images/2.png" alt="Title">
+                <img class="w-75 h-400" src="images/2.png" alt="MEMORY">
                 </a>
                 <p class="mt-3"><b>Product Code:</b> 123456789</br>
                  <b>Author:</b> Angelina Aludo</br>
@@ -43,10 +42,18 @@
                  <b>Price:</b> $ 100 CAD</br>
                  <b>Description:</b> In Purgatory, He has to piece together his jumbled memories</p>
             </div>
-
             <div class="col-md-4 my-4">
                 <a href="#">
-                <img class="w-75 h-400" src="images/4.png" alt="Title">
+                <img class="w-75 h-400" src="images/3.png" alt="DIFFERENT WINTER">
+                </a>
+                <p class="mt-3"><b>Product Code:</b> 123456789</br>
+                 <b>Author:</b> Mia Jackson </br>
+                 <b>Format:</b> Both (Paper, Epub)</br>
+                 <b>Price:</b> $ 120 CAD</br>
+            </div>
+            <div class="col-md-4 my-4">
+                <a href="#">
+                <img class="w-75 h-400" src="images/4.png" alt="MY BOOK COVER">
                 </a>
                 <p class="mt-3"><b>Product Code:</b> 123456789</br>
                  <b>Author:</b> </br>
@@ -56,28 +63,65 @@
             </div>
             <div class="col-md-4 my-4">
                 <a href="#">
-                <img class="w-75 h-400" src="images/5.png" alt="Title">
+                <img class="w-75 h-400" src="images/5.png" alt="HARRY POTER">
                 </a>
                 <p class="mt-3"><b>Product Code:</b> 123456789</br>
                  <b>Author:</b> Jack Thorne</br>
                  <b>Format:</b> Paper </br>
                  <b>Price:</b> $ 150 CAD</br>  
             </div>
-        
             <div class="col-md-4 my-4">
                 <a href="#">
-                <img class="w-75 h-400" src="images/7.png" alt="Title">
+                <img class="w-75 h-400" src="images/6.png" alt="SPEED SMART READING">
+                </a>
+                <p class="mt-3"><b>Product Code:</b> 123456789</br>
+                 <b>Author:</b> Vamegh Askari-MBA</br>
+                 <b>Format:</b> Both (Paper, Epub) </br>
+                 <b>Price:</b> $ 120 CAD</br>
+                 <b>Description:</b> How not to read Non-Fiction books cover to cover </p>
+            </div>
+            <div class="col-md-4 my-4">
+                <a href="#">
+                <img class="w-75 h-400" src="images/7.png" alt="THE PAST IS RISING">
                 </a>
                 <p class="mt-3"><b>Product Code:</b> 123456789</br>
                  <b>Author:</b> Kathryn by Waters</br>
                  <b>Format:</b> Both (Paper, Epub) </br>
                  <b>Price:</b> $ 100 CAD</br> 
             </div>
+            <div class="col-md-4 my-4">
+                <a href="#">
+                <img class="w-75 h-400" src="images/8.png" alt="THE MARTIAN AND WEIR">
+                </a>
+                <p class="mt-3"><b>Product Code:</b> 123456789</br>
+                 <b>Author:</b> </br>
+                 <b>Format:</b> Paper </br>
+                 <b>Price:</b> $ 150 CAD</br>
+            </div>
+            <div class="col-md-4 my-4">
+                <a href="#">
+                <img class="w-75 h-400" src="images/9.png" alt="SLATED">
+                </a>
+                <p class="mt-3"><b>Product Code:</b> 123456789</br>
+                 <b>Author:</b> Teri Terry</br>
+                 <b>Format:</b> Both (Paper, Epub) </br>
+                 <b>Price:</b> $ 150 CAD</br>
+                 <b>Description:</b> Can you know the truth if your mind has been wiped? </p>
+            </div>
+            <div class="col-md-4 my-4">
+                <a href="#">
+                <img class="w-75 h-400" src="images/10.png" alt="WHY AM I TALLER?">
+                </a>
+                <p class="mt-3"><b>Product Code:</b> 123456789</br>
+                 <b>Author:</b> Dave Williams & Elizabeth Howell</br>
+                 <b>Format:</b> Both (Paper, Epub) </br>
+                 <b>Price:</b> $ 140 CAD</br>
+                 <b>Description:</b> What happens to an Astronaut's body in space. </p>
+            </div>
         </div>
         
 
     </div>
-
     <include src="assets/footer.html"></include>
 
     <script>
@@ -123,6 +167,24 @@
 
         }
     
+        function searchbook()
+        {
+            x=searchbox.value;
+            x=x.toUpperCase();
+            // alert(x);
+            e=document.querySelectorAll(".w-75");
+            for(i=0;i<e.length;i++)
+            {
+                if(e[i].alt.includes(x)==true || x=="")
+                {
+                    e[i].parentElement.parentElement.style.display="block";
+                }
+                else
+                {
+                    e[i].parentElement.parentElement.style.display="none";
+                }
+            }
+        }
 
      </script>
 </body>
