@@ -7,6 +7,7 @@
     <link href="css/style.css" rel="stylesheet">
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="assets/footer.js"></script>
     
 </head>
 <body onload="loadFunction()">
@@ -40,7 +41,7 @@
             <p><i class="bi bi-laptop"></i></p>
             <h1>Your Account</h1>
             <p>Log in to Your account</p>
-            <a href="#" class="btn btn-lg w-100 btn-primary">Connection</a>
+            <a href="login.html" class="btn btn-lg w-100 btn-primary">Connection</a>
         </div>
         <div class="col-md-3 text-center bg-light py-5">
             <p><i class="bi bi-search"></i></p>
@@ -70,11 +71,10 @@
     </div>
 
     <include src="assets/footer.html"></include>
-  
 
     <script>
 
-        main.style.display="none";
+        // main.style.display="none";
 
 
   //JS Codes for include nav and footer html files
@@ -101,7 +101,7 @@
                 nodeList[i].classList.remove("disabled");
             
             var x=`<h3>Dear ${localStorage.getItem("log-fname")}, You are logged on as ${localStorage.getItem("log-email")} Welcome... <button onclick='logout()' class="btn btn-danger">Log Out..</button></h3>`
-            main.style.display="block";
+            // main.style.display="block";
             } 
             else
             {
